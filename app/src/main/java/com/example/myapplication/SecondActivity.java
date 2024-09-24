@@ -14,7 +14,7 @@ public class SecondActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        float ammountValue = getIntent().getFloatExtra("ammountValue", 0.00f);
+        float ammountValue = getIntent().getFloatExtra("finalammountValue", 0.00f);
         int taxesValue = getIntent().getIntExtra("taxesValue", 0);
         int yearsValue = getIntent().getIntExtra("yearsValue", 0);
 
@@ -59,7 +59,7 @@ public class SecondActivity extends Activity {
 
     private float calculateContribution (float ammount, float taxes, float months){
         float firstLine = ammount * taxes;
-        float secondLine = (float) (Math.pow(1 + taxes, months)-1);
+        float secondLine = (float) Math.pow(1 + taxes, months)-1;
         return firstLine / secondLine;
     }
 }

@@ -21,20 +21,20 @@ public class MainActivity extends Activity {
         caltulateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText ammountValue = findViewById(R.id.ammount_input);
+                EditText ammountValue = findViewById(R.id.ammount_hint);
                 String ammountValueString = ammountValue.getText().toString();
                 Float ammountValueFloat = Float.parseFloat(ammountValueString);
 
-                EditText taxesValue = findViewById(R.id.taxes_input);
+                EditText taxesValue = findViewById(R.id.taxtes_hint);
                 String taxesValueString = taxesValue.getText().toString();
                 int taxesValueInt = Integer.parseInt(taxesValueString);
 
-                EditText yearsValue = findViewById(R.id.years_input);
+                EditText yearsValue = findViewById(R.id.years_hint);
                 String yearsValueString = yearsValue.getText().toString();
                 int yearsValueInt = Integer.parseInt(yearsValueString);
 
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra("ammountValue", ammountValueFloat);
+                intent.putExtra("finalammountValue", ammountValueFloat);
                 intent.putExtra("taxesValue", taxesValueInt);
                 intent.putExtra("yearsValue", yearsValueInt);
                 startActivity(intent);
